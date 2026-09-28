@@ -36,11 +36,19 @@ const PHOTOS = [
   // 200 × 200 original: kept at native size (TODO: higher-resolution photo).
   { id: "sandesh-g-v", file: "sandesh_g_v.jpg" },
   // Keep the top of the photo so the head is not cut off.
-  { id: "abhishek-kumar-singh", file: "photo_gtnew.jpg", crop: { left: 0, top: 0, width: 530, height: 662 } },
+  {
+    id: "abhishek-kumar-singh",
+    file: "photo_gtnew.jpg",
+    crop: { left: 0, top: 0, width: 530, height: 662 },
+  },
   // Landscape original (1296 × 972): full-height portrait crop centred on the face.
   { id: "avinash", file: "avinash.jpeg", crop: { left: 366, top: 0, width: 778, height: 972 } },
   // Wide scene: tighter crop around head and shoulders.
-  { id: "kartik-kumar-singh", file: "kartik.jpeg", crop: { left: 160, top: 270, width: 560, height: 700 } },
+  {
+    id: "kartik-kumar-singh",
+    file: "kartik.jpeg",
+    crop: { left: 160, top: 270, width: 560, height: 700 },
+  },
 ];
 
 function centreCrop(width, height) {

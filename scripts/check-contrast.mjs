@@ -11,7 +11,9 @@ function tokens(selector) {
   const start = css.indexOf(`${selector} {`);
   if (start === -1) throw new Error(`No "${selector}" block in src/index.css`);
   const block = css.slice(start, css.indexOf("}", start));
-  return Object.fromEntries([...block.matchAll(/--([a-z-]+):\s*(#[0-9a-f]{6})/gi)].map((m) => [m[1], m[2]]));
+  return Object.fromEntries(
+    [...block.matchAll(/--([a-z-]+):\s*(#[0-9a-f]{6})/gi)].map((m) => [m[1], m[2].toLowerCase()]),
+  );
 }
 
 function luminance(hex) {
@@ -42,17 +44,39 @@ const PAIRS = [
   ["control", "canvas", 3, "control borders"],
   ["control", "surface", 3, "control borders on panels"],
   ["accent", "canvas", 3, "accent UI (timeline, borders)"],
+  ["accent", "surface", 3, "accent UI on panels"],
+  // The header holds no links or buttons. The only focus ring drawn over it is the skip link's.
+  ["focus", "header", 3, "default focus ring next to the header"],
+  ["header-ink", "header", 3, "skip link focus ring over the header"],
 ];
 
 let failed = false;
-for (const [theme, selector] of [["light", ":root"], ["dark", ":root.dark"]]) {
+
+// The no-JavaScript dark theme (prefers-color-scheme block) must match the toggled one.
+const toggled = tokens(":root.dark");
+const system = tokens(":root:not(.light):not(.dark)");
+for (const name of new Set([...Object.keys(toggled), ...Object.keys(system)])) {
+  if (toggled[name] !== system[name]) {
+    failed = true;
+    console.log(
+      `FAIL  --${name}: :root.dark ${toggled[name]} vs prefers-color-scheme ${system[name]}`,
+    );
+  }
+}
+
+for (const [theme, selector] of [
+  ["light", ":root"],
+  ["dark", ":root.dark"],
+]) {
   const t = tokens(selector);
   console.log(`\n${theme}`);
   for (const [fg, bg, min, what] of PAIRS) {
     const r = ratio(t[fg], t[bg]);
     const ok = r >= min;
     if (!ok) failed = true;
-    console.log(`  ${ok ? "pass" : "FAIL"}  ${r.toFixed(2).padStart(5)}:1 (min ${min})  ${fg} on ${bg}  — ${what}`);
+    console.log(
+      `  ${ok ? "pass" : "FAIL"}  ${r.toFixed(2).padStart(5)}:1 (min ${min})  ${fg} on ${bg}  — ${what}`,
+    );
   }
 }
 
