@@ -51,7 +51,7 @@ export const problem: Paragraphs & { gapsIntro: string; gaps: string[]; proposal
 
 export const howItWorks = {
   heading: "How it works",
-  intro: "The cane is designed to handle everything on the device, in four stages.",
+  intro: "The cane is designed to work in four stages.",
   diagram: {
     title: "System diagram of the guidance cane",
     description:

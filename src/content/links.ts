@@ -9,7 +9,8 @@ export const sourceCode: {
   todo: string;
 } = {
   heading: "Source code",
-  intro: "The project's code is kept on GitHub, under the NaskenAI organisation.",
+  intro:
+    "The code for this website is on GitHub, under the NaskenAI organisation. A link to the cane's own software will be added here when it is published.",
   links: [
     {
       label: "NaskenAI on GitHub",

@@ -19,7 +19,7 @@ export const accessibility: {
   measures: [
     "Use the Atkinson Hyperlegible typeface, designed for low-vision readers, at a comfortable size.",
     "Provide a text version of every diagram and descriptive text for every photo.",
-    "Support keyboard use, screen readers, browser zoom up to 400%, and light and dark themes.",
+    "Support full keyboard use, browser zoom up to 400% (content reflows at 320 px width without sideways scrolling), and light and dark themes.",
     "Test every change automatically with axe in both themes, at phone and desktop widths.",
   ],
   limitationsHeading: "Known limitations",
