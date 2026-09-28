@@ -31,18 +31,20 @@ export const hero = {
   ],
 };
 
-export const problem: Paragraphs & { gapsIntro: string; gaps: string[]; proposal: string[] } = {
+export const problem: Paragraphs & {
+  gapsIntro: string;
+  gaps: string[];
+  proposalHeading: string;
+  proposal: string[];
+} = {
   heading: "The problem",
+  proposalHeading: "The proposed system",
   paragraphs: [
     "Visually impaired individuals often face difficulties while moving independently in unfamiliar indoor and outdoor environments.",
     "A conventional white cane is an important mobility aid that helps users detect obstacles through physical contact. However, it provides limited information about the objects in the surrounding environment.",
   ],
   gapsIntro: "Through contact alone, a white cane gives the user little information about:",
-  gaps: [
-    "the type of object in the way",
-    "where the object is",
-    "how far away the object is",
-  ],
+  gaps: ["the type of object in the way", "where the object is", "how far away the object is"],
   proposal: [
     "To address these limitations, this project proposes an Edge Vision Assistive Guidance Cane for the Visually Impaired. The proposed system integrates a camera, distance sensor, Raspberry Pi 5, computer vision, object detection and audio/vibration feedback into a portable walking cane.",
     "The Raspberry Pi 5 is designed to perform image processing and object detection locally, on the cane itself, and the system aims to identify common objects and obstacles such as people, vehicles, chairs, walls and poles.",
@@ -52,6 +54,7 @@ export const problem: Paragraphs & { gapsIntro: string; gaps: string[]; proposal
 export const howItWorks = {
   heading: "How it works",
   intro: "The cane is designed to work in four stages.",
+  stepsHeading: "The four stages",
   diagram: {
     title: "System diagram of the guidance cane",
     description:

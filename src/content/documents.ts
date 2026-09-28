@@ -14,20 +14,80 @@ import type { ProjectDocument } from "./types";
 
 export const documents: ProjectDocument[] = [
   // Weekly reports (shown in the Progress timeline, in this order)
-  { id: "report-1", category: "weekly-report", title: "Report 1 — Project Introduction", status: "planned" },
-  { id: "report-2", category: "weekly-report", title: "Report 2 — Literature Survey", status: "planned" },
-  { id: "report-3", category: "weekly-report", title: "Report 3 — System Requirements", status: "planned" },
-  { id: "report-4", category: "weekly-report", title: "Report 4 — Hardware Selection", status: "planned" },
-  { id: "report-5", category: "weekly-report", title: "Report 5 — Software Development", status: "planned" },
-  { id: "report-6", category: "weekly-report", title: "Report 6 — Prototype Development", status: "planned" },
-  { id: "report-7", category: "weekly-report", title: "Report 7 — Testing and Validation", status: "planned" },
+  {
+    id: "report-1",
+    category: "weekly-report",
+    title: "Report 1 — Project Introduction",
+    status: "planned",
+  },
+  {
+    id: "report-2",
+    category: "weekly-report",
+    title: "Report 2 — Literature Survey",
+    status: "planned",
+  },
+  {
+    id: "report-3",
+    category: "weekly-report",
+    title: "Report 3 — System Requirements",
+    status: "planned",
+  },
+  {
+    id: "report-4",
+    category: "weekly-report",
+    title: "Report 4 — Hardware Selection",
+    status: "planned",
+  },
+  {
+    id: "report-5",
+    category: "weekly-report",
+    title: "Report 5 — Software Development",
+    status: "planned",
+  },
+  {
+    id: "report-6",
+    category: "weekly-report",
+    title: "Report 6 — Prototype Development",
+    status: "planned",
+  },
+  {
+    id: "report-7",
+    category: "weekly-report",
+    title: "Report 7 — Testing and Validation",
+    status: "planned",
+  },
 
   // Design documents
-  { id: "initial-design", category: "design-document", title: "Initial Design Document", status: "planned" },
-  { id: "system-requirements", category: "design-document", title: "System Requirements Document", status: "planned" },
-  { id: "hardware-design", category: "design-document", title: "Hardware Design Document", status: "planned" },
-  { id: "software-design", category: "design-document", title: "Software Design Document", status: "planned" },
-  { id: "final-design", category: "design-document", title: "Final Design Document", status: "planned" },
+  {
+    id: "initial-design",
+    category: "design-document",
+    title: "Initial Design Document",
+    status: "planned",
+  },
+  {
+    id: "system-requirements",
+    category: "design-document",
+    title: "System Requirements Document",
+    status: "planned",
+  },
+  {
+    id: "hardware-design",
+    category: "design-document",
+    title: "Hardware Design Document",
+    status: "planned",
+  },
+  {
+    id: "software-design",
+    category: "design-document",
+    title: "Software Design Document",
+    status: "planned",
+  },
+  {
+    id: "final-design",
+    category: "design-document",
+    title: "Final Design Document",
+    status: "planned",
+  },
 
   // Poster and presentations
   {
